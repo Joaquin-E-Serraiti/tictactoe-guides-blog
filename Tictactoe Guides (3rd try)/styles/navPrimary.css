@@ -1,0 +1,203 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  min-width: 250px;
+  margin: 0px;
+}
+#primaryNav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+}
+.navBar {
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 80px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+
+  padding: 0px 40px;
+
+  transition: background-color 0.45s;
+}
+.navClass2 {
+  background-color: rgba(11, 1, 28);
+}
+#logoLink {
+  height: 40px;
+}
+#logoLink img {
+  height: 40px;
+  width: auto;
+}
+.navBar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.navBar ul li {
+  margin: 0px 0px 0px 35px;
+}
+.navBar ul li a {
+  font-size: 0.89em;
+  text-decoration: none;
+  color: rgb(199, 196, 205);
+  transition: color 0.15s;
+}
+.navBar ul li a:hover {
+  color: white;
+}
+
+#blogNavBarLink a {
+  border: 1px solid rgb(199, 196, 205);
+  border-radius: 3px;
+  padding: 6px 20px;
+  transition: border-color 0.15s;
+}
+#blogNavBarLink a:hover {
+  border-color: rgb(255, 255, 255);
+}
+
+/*HAMBURGER BUTTON###########################*/
+.hamburgerButton {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30px;
+  aspect-ratio: 1/0.9;
+  cursor: pointer;
+}
+.hamburgerButton:hover div {
+  background-color: rgb(255, 255, 255);
+}
+.hamburgerButton div {
+  height: 4px;
+  border-radius: 3px;
+  background-color: rgb(199, 196, 205);
+}
+
+.hamburgerMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-width: 300px;
+  z-index: 101;
+  border-left: 1px solid rgb(61, 59, 69);
+  background-color: rgb(38, 37, 45);
+  background: linear-gradient(to bottom, rgb(37, 36, 44), rgb(20, 19, 28));
+}
+.hamburgerMenu nav {
+  display: flex;
+  justify-content: center;
+}
+.hamburgerMenu ul {
+  list-style: none;
+  border-top: 1px solid rgb(61, 59, 69);
+  margin: 80px 0px 0px 0px;
+  padding: 40px 0px 0px 20px;
+  width: 78%;
+}
+.hamburgerMenu li {
+  margin-bottom: 20px;
+}
+.hamburgerMenu a {
+  color: rgb(199, 196, 205);
+  text-decoration: none;
+}
+.hamburgerMenu a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  height: 40px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+.closeButton p {
+  color: white;
+  padding: 0px;
+  margin: 0px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 270%;
+}
+
+#menuDark {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(5, 0, 12, 0.5);
+}
+
+/*MEDIA QUERIES#########################################*/
+@media (max-width: 1000px) {
+  .navBar ul {
+    display: none;
+  }
+  .hamburgerButton {
+    display: flex;
+  }
+  .hamburgerMenu li {
+    margin-bottom: 25px;
+  }
+  .hamburgerMenu a {
+    font-size: 1.15em;
+  }
+}
+@media (max-width: 700px) {
+  .navBar {
+    height: 63px;
+    padding: 0px 5vw;
+  }
+  .hamburgerMenu {
+    max-width: 100%;
+  }
+  .hamburgerMenu ul {
+    margin-top: 63px;
+  }
+  .hamburgerMenu li {
+    margin-bottom: 35px;
+  }
+  .hamburgerMenu a {
+    font-size: 1.3em;
+  }
+  .closeButton {
+    height: 30px;
+    right: 4.5vw;
+  }
+  .closeButton p {
+    line-height: 23px;
+    font-size: 200%;
+  }
+  #logoLink {
+    height: 33px;
+  }
+  #logoLink img {
+    height: 33px;
+  }
+  .hamburgerButton {
+    height: 23px;
+  }
+}

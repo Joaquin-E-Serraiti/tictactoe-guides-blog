@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      All possible combinations of plays in Tic Tac Toe - Tictactoe Guides
+    </title>
+
+    <!--META FOR CHARSET-->
+    <meta charset="UTF-8" />
+    <!--META FOR VIEWPORT-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--ICON-->
+    <link rel="icon" type="image/x-icon" href="assets(2)/Logo-9.webp" />
+    <!--FONTS-->
+    <link rel="preload stylesheet" as="style" href="fonts/fonts.css" />
+    <!--SCRIPTS-->
+    <!--STYLES-->
+    <style>
+      #mapImgDiv {
+        position: relative;
+        margin: 30px 0px;
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      #mapImgDiv img {
+        width: 100%;
+        height: auto;
+        vertical-align: middle;
+      }
+      #mapImgDiv a {
+        opacity: 0;
+        display: inline-block;
+        text-align: center;
+        padding-top: 33%;
+        text-decoration: none;
+        color: white;
+        font-size: calc((1.5vw + 30px));
+        font-weight: bold;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: 0px;
+        background-color: rgba(21, 18, 30, 0.33);
+
+        transition: opacity 0.15s;
+      }
+      #mapImgDiv a:hover {
+        opacity: 1;
+      }
+    </style>
+    <link
+      rel="preload stylesheet"
+      as="style"
+      href="styles/articlesStyles.css"
+    />
+    <link
+      rel="preload"
+      href="styles/footerStyle.css"
+      as="style"
+      fetchpriority="low"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="styles/footerStyle.css" /></noscript>
+    <link rel="preload stylesheet" as="style" href="styles/navPrimary.css" />
+    <link rel="stylesheet" href="styles/articlesStyleSheets/article-1.css" />
+  </head>
+  <body>
+    <script src="scripts/header.js"></script>
+    <main>
+      <section class="articleSection">
+        <div class="sideColumn"></div>
+        <article>
+          <header>
+            <h1>All possible combinations of plays in Tic Tac Toe</h1>
+            <div>
+              <p><b>Published:</b> February 18th, 2024</p>
+              <p><b>Updated:</b> February 19th, 2024</p>
+            </div>
+          </header>
+          <p>
+            Have you ever wondered how many different combinations of plays
+            there are in tic tac toe?
+          </p>
+          <p>
+            I've created a map that displays all of them, with just 179 boards:
+          </p>
+          <div id="mapImgDiv">
+            <img
+              fetchpriority="high"
+              src="assets(2)/Article-1/Map of all plays in Tic Tac Toe (svg).svg"
+              width="700"
+              height="500"
+              alt="Map of all possible plays in Tic-Tac-Toe"
+            />
+            <a
+              href="assets(2)/Article-1/Map of all plays in Tic Tac Toe.webp"
+              target="_blank"
+              >View</a
+            >
+          </div>
+          <p>
+            It includes all the ramifications of plays and every possible
+            outcome in the game: each win, loss and tie... (or something similar
+            to that).
+          </p>
+          <p>Do you want to know how it works and how it was done?</p>
+          <p>
+            In this article, I will explain this map and go through all the
+            strategies and concepts applied to create it, showing you some cool
+            game patterns along the way.
+          </p>
+          <p>With this map and the information in this article, you will:</p>
+          <ul>
+            <li>
+              <p>
+                Gain insights into the logic of tic tac toe and many of its
+                patterns.
+              </p>
+            </li>
+            <li>
+              <p>
+                Know how to make the best plays at any state of the game, never
+                lose and win when it is possible.
+              </p>
+            </li>
+            <li><p>Be able to choose the outcome you want in any game.</p></li>
+          </ul>
+          <div id="giftAtTheEnd">
+            <p>
+              <span style="color: rgb(140, 236, 174)"
+                >There is a free gift at the end of the article:</span
+              >
+              File of the map in high definition and with extra data.
+            </p>
+          </div>
+          <h2>Concepts we will go through</h2>
+          <ul id="firstUl">
+            <li>
+              <h3>Symmetry of the board: Rotations and reflections</h3>
+              <p>
+                Some plays are just rotated or reflected versions of other
+                plays. Despite looking different, they are the same in terms of
+                how they work strategically.
+              </p>
+            </li>
+            <li>
+              <h3>3 extra rules of play</h3>
+              <p>
+                To avoid including irrelevant or unnecesary plays in the map, I
+                implemented 3 extra rules that both players must follow in each
+                of their turns.
+              </p>
+            </li>
+            <li>
+              <h3>How to win in advance with double threats</h3>
+              <p>
+                Using double threats, players can force a future win,
+                essentially winning 2 turns in advance.
+              </p>
+            </li>
+
+            <li>
+              <h3>All games end at the 7th turn</h3>
+              <p>
+                Here is a demonstration of how you can always know the result of
+                a game at the 7th turn, as if it was the end of the game.
+              </p>
+            </li>
+            <li>
+              <h3>The only 3 states of tie</h3>
+              <p>
+                All ties are just rotated or mirrored version of 3 states of the
+                board. Here you will see what these 3 states are.
+              </p>
+            </li>
+            <li>
+              <h3>Winning sequences</h3>
+              <p>
+                These sequences are another way of forcing a future win. Unlike
+                double threats, winning sequences let the players secure wins 4
+                turns in advance.
+              </p>
+            </li>
+          </ul>
+          <p>Are you interested?</p>
+          <p>Let's get started.</p>
+          <h2 id="Symmetry-of-the-board">
+            Symmetry of the board: Rotations and reflections
+          </h2>
+          <p>
+            I tried to avoid including unnecessary plays in the map and make it
+            as compact as possible.
+          </p>
+          <p>
+            To do that, one of the things I did was apply the concept of board
+            symmetry, with rotations and reflections.
+          </p>
+          <p>
+            It helped me to rule out at least 2 thirds (66%) of all the possible
+            plays that I was contemplating at the moment.
+          </p>
+          <p>Let me explain how it helped me:</p>
+          <p>
+            With the board symmetry in mind, you will notice that, in some
+            cases, even if two plays are made in different cells of the board,
+            they are strategically identical.
+          </p>
+          <p>
+            In fact, they are just different versions of the same play: rotated
+            or reflected versions.
+          </p>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/empty-board.webp"
+              width="700"
+              height="400"
+              alt="Empty tic-tac-toe board"
+              style="padding: 0px calc(25vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>
+            Let’s put the first turn as an example: you may see that the board
+            is empty and conclude that there are 9 different plays you can do,
+            one for each empty cell. But many of those plays are just rotated or
+            mirrored versions of each other.
+          </p>
+          <div id="rotatingAnimation">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/rotating-corners.webp"
+              width="700"
+              height="400"
+              alt="Rotating board with one cross in the corner"
+            />
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/rotating-laterals.webp"
+              width="700"
+              height="400"
+              alt="Rotating board with one cross in the side"
+            />
+          </div>
+          <p>
+            In the first turn, playing in the top left corner is the same as
+            playing in any other corner. The same applies to playing in the
+            sides.
+          </p>
+          <p>
+            All the different versions of a play can be obtained by rotating or
+            mirroring the board.
+          </p>
+          <p>
+            Every play has either 1, 2, 4 or 8 different versions of itself
+            (rotated and or reflected):
+          </p>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/versions-of-itself-1.webp"
+              width="700"
+              height="400"
+              alt="Examples of plays with many versions of itself (1)"
+              style="padding: 0px calc(10vw * var(--sizeAdjust))"
+            />
+          </div>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/versions-of-itself-2.webp"
+              width="700"
+              height="400"
+              alt="Examples of plays with many versions of itself (2)"
+              style="padding: 0px calc(9vw * var(--sizeAdjust))"
+            />
+          </div>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/versions-of-itself-3.webp"
+              width="700"
+              height="400"
+              alt="Examples of plays with many versions of itself (3)"
+              style="padding: 0px calc(3vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>
+            I considered the different versions of the same play as repeated
+            plays and didn't include them in the map.
+          </p>
+          <p>
+            When you have multiple plays that are rotated or mirrored versions
+            of each other, their ramifications will also be rotated or mirrored
+            versions of each other:
+          </p>
+          <div id="pendulumAnimation">
+            <img
+              loading="lazy"
+              id="pendulumBG"
+              src="assets(2)/Article-1/rotating-ramifications(3).webp"
+              width="700"
+              height="400"
+              alt="Rotated ramifications"
+            />
+            <img
+              loading="lazy"
+              id="pendulum"
+              src="assets(2)/Article-1/rotating-ramifications(4).webp"
+              width="700"
+              height="400"
+              alt="Tree of plays rotating and matching the rotated ramifications"
+            />
+          </div>
+          <p>
+            Why did I say that the concept of board symmetry helped me to rule
+            out at least 2 thirds (66%) of all the possible plays I was
+            contemplating?
+          </p>
+          <p>
+            Because, when making the map with all the ramifications of plays,
+            instead of starting with 9 possibilities in the first turn, I
+            started with 3: corner, side and center.
+          </p>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/9-possibilities-to-3-1.webp"
+              width="700"
+              height="400"
+              alt="A play in the corner (any corner, because it is the same)"
+              style="padding: 0px calc(10vw * var(--sizeAdjust))"
+            />
+          </div>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/9-possibilities-to-3-2.webp"
+              width="700"
+              height="400"
+              alt="A play in the side (any side, because it is the same)"
+              style="padding: 0px calc(10vw * var(--sizeAdjust))"
+            />
+          </div>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/9-possibilities-to-3-3.webp"
+              width="700"
+              height="400"
+              alt="A play in the center square (there is only one in the board)"
+              style="padding: 0px calc(10vw * var(--sizeAdjust))"
+            />
+          </div>
+          <h2 id="3-extra-rules-of-play">3 extra rules of play</h2>
+          <p>
+            When making the map of all possible plays, I implemented 3 extra
+            rules that both players must follow in every turn.
+          </p>
+          <p>
+            These 3 rules narrow down the plays that the players can do by
+            excluding those plays that are irrelevant or that would never be
+            made in a serious game.
+          </p>
+          <p>Examples 1 and 2 show some of these types of plays:</p>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/bad-plays-examples-1.webp"
+              width="700"
+              height="400"
+              alt="Example 1: not making a 3-in-a-row when you are able to do it."
+              style="padding: 0px calc(18vw * var(--sizeAdjust))"
+            />
+          </div>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/bad-plays-examples-2.webp"
+              width="700"
+              height="400"
+              alt="Example 2: letting your opponent make a 3-in-a-row when you can stop them."
+              style="padding: 0px calc(7vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>
+            If a play goes against at least 1 of 3 rules, that play is not
+            included in the map.
+          </p>
+          <p>
+            With this, I made the map more compact, only including relevant and
+            important plays.
+          </p>
+          <h3>RULE 1 - If you can win, win.</h3>
+          <p>This is the simplest rule.</p>
+          <p>
+            If it is your turn and you are able to make a 3-in-a-row, you have
+            to do it.
+          </p>
+          <p>It makes no sense to not win when you can win.</p>
+          <h3>RULE 2 - If there is a threat, block it.</h3>
+          <p>Here we introduce the concept of threat.</p>
+          <p>
+            By “threat” I mean a line (column, row or diagonal) with one empty
+            cell and 2 cells occupied with the marks of the same player.
+          </p>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/threats-examples.webp"
+              width="700"
+              height="400"
+              alt="Examples of lines with 3 squares: 2 occupied with the same marks and one empty"
+              style="padding: 0px calc(12vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>
+            I call it “threat” because by making one you are threatening to win
+            in the next turn.
+          </p>
+          <p>
+            After following the rule 1 without finding a possible win, look if
+            there is a threat of your opponent. If there is one, block it by
+            putting your mark in the empty cell of the line.
+          </p>
+          <p>
+            Not doing this will allow your opponent to win in their next turn,
+            which also makes no sense.
+          </p>
+          <h3>RULE 3 - If you can force a future win, force it.</h3>
+          <p>
+            If you can’t make a 3-in-a-row and there is no opponent threat to
+            block, then you have to check if there is a way for you to force a
+            future win (a win that takes place in future turns).
+          </p>
+          <p>In case you are able to force a win, you have to do it.</p>
+          <p>
+            If you can force multiple wins, you have to go for the faster one,
+            the one that takes less turns.
+          </p>
+          <p>There are only two ways in which you can force a future win:</p>
+          <p>
+            One way is by making double threats and the other one is by making
+            winning sequences. These two concepts will be explained later in the
+            article.
+          </p>
+          <p>
+            In the map, I signaled the cases where there is a forced win with a
+            purple frame.
+          </p>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/purple-frames.webp"
+              width="700"
+              height="400"
+              alt="Sequences of plays inside purple frames"
+              style="padding: 0px calc(15vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>
+            I didn’t signaled the cases where the player can’t avoid forcing a
+            win to stop the opponent from making a 3-in-a-row. This is one of
+            those cases:
+          </p>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/no-purple-frame.webp"
+              width="700"
+              height="400"
+              alt="Sequence of plays that forces a win but doesn't have a purple frame"
+              style="padding: 0px calc(15vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>
+            If the player with X's hadn’t created a double threat, their
+            opponent would have made a 3-in-a-row.
+          </p>
+          <p>Following these rules would look like this:</p>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/3-rules-of-play.webp"
+              width="700"
+              height="400"
+              alt="Flow chart: rule 1, next is rule 2, then rule 3. After checking every rule, you can play anything."
+              style="padding: 0px calc(10vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>
+            The plays that don’t comply with even 1 of the 3 rules (for example,
+            not making a 3-in-a-row when you can do it) aren’t included in the
+            map of all possible combinations of plays.
+          </p>
+          <p>
+            With both players following this process, I made the map more
+            compact and easy to read, while only including relevant plays.
+          </p>
+          <h2 id="Double-threats">How to win in advance with double threats</h2>
+          <p>
+            Double threats are one of the two strategies you can use to force a
+            future win—as I mentioned in the 3rd rule of the 3 extra rules of
+            play, above in the article.
+          </p>
+          <p>
+            You make double threats by creating 2 threats (explained in the 2nd
+            rule of the 3 extra rules of play) in the same turn.
+          </p>
+          <p>
+            The opponent won’t be able to block both threats in their next turn,
+            leaving you the possibility to make a 3-in-a-row.
+          </p>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/double-threat-example.webp"
+              width="700"
+              height="400"
+              alt="Example of a double threat"
+              style="padding: 0px calc(0vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>Double threats must be created in a single turn.</p>
+          <p>
+            If you try to make two threats in 2 turns, your opponent will have
+            one turn in between to block the first threat, before you make the
+            second one.
+          </p>
+          <p>
+            Your opponent should always block that first threat as long as they
+            can’t make a 3-in-a-row (2nd rule of the 3 extra rules of play).
+          </p>
+          <p>
+            Also, the 2 lines of all double threats always share one cell: the
+            cell where you played to make the double threat in one turn.
+          </p>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/shared-cell-examples.webp"
+              width="700"
+              height="400"
+              alt="Shared cells signaled in 4 different double threats"
+              style="padding: 0px calc(0vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>
+            Making a double threat will inevitably lead to a win because the
+            opponent won’t be able to block both threats at the same time.
+          </p>
+          <p>
+            If there is a double threat, the result of the game is already
+            decided.
+          </p>
+          <p>
+            For that reason, I didn’t include the plays after double threats in
+            the map.
+          </p>
+          <h3>CURIOUS QUESTION: Can you create a triple threat?</h3>
+          <p>
+            Sadly, “triple threats” aren’t possible. You can’t make more than 2
+            threats in one turn.
+          </p>
+          <p>Why?</p>
+          <p>
+            To have a triple threat on the board there must be 3 threats, which
+            is the same as 3 lines, each with 2 of your marks and 1 empty cell.
+          </p>
+          <p>
+            Those 3 threats must have been created in one turn, so all the 3
+            lines share 1 cell occupied with your mark. Consequently, there have
+            to be 4 of your marks (1 of the 4 marks being shared between the 3
+            lines).
+          </p>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/triple-threats-examples.webp"
+              width="700"
+              height="400"
+              alt="2 hypothetical examples of triple threats"
+              style="padding: 0px calc(17vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>
+            To have 3 threats made in one turn, the board must have 3 empty
+            cells and 4 cells occupied with your marks.
+          </p>
+          <p>
+            If you were playing with O’s, the other player must have the same
+            amount of marks in the board as you.
+          </p>
+          <p>
+            This means that the board must have at least 4 cells occupied by
+            you, 4 by your opponent and 3 empty cells. 11 cells in total, which
+            is more than the 9 cells that the classic board has.
+          </p>
+          <p>
+            If you were playing with X’s, the other player must have at least 3
+            marks (4 minus 1) in the board.
+          </p>
+          <p>
+            There has to be at least 4 cells occupied by you, 3 by your opponent
+            and 3 empty cells. 10 in total, which is also more than 9.
+          </p>
+          <p>
+            Either if you play with O’s or with X’s, the minimum amount of cells
+            in the board needed to make 3 threats in one turn would be more than
+            9.
+          </p>
+          <h2>All victories are achieved through double threats</h2>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/victory-equals-double-threat.webp"
+              width="700"
+              height="400"
+              alt="Double threat = victory. Victory = double threat."
+              style="padding: 0px calc(0vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>This is an important pattern in tic tac toe.</p>
+          <p>
+            If both players follow the 3 extra rules of play, you will see that
+            every victory is achieved by first making a double threat.
+          </p>
+          <p>Here is a demonstration of why this occurs:</p>
+          <p>
+            Let’s consider a hypothetical scenario where a victory has already
+            been achieved, meaning there is a 3-in-a-row in the board and the
+            game has ended.
+          </p>
+          <p>You can imagine any board with a victory.</p>
+          <p>
+            Now, Let's rewind the game by two turns to examine the board before
+            the victory occurred.
+          </p>
+          <p>
+            The line of the board where previously was a 3-in-a-row, now has 1
+            empty cell and 2 cells with the marks of the future winner.
+          </p>
+          <p>
+            That is the definition of a threat: a line with 2 marks of the same
+            player and one empty cell.
+          </p>
+          <p>
+            Because we went back 2 turns, now it would be the turn of the future
+            losing player. But we know that they didn’t block the threat and
+            their opponent made 3-in-a-row.
+          </p>
+          <p>Why didn’t they block that threat?</p>
+          <p>There are only two alternatives:</p>
+          <ul style="list-style: decimal">
+            <li>
+              <p>
+                The loser, unintentionally or intentionally, left a threat
+                without blocking despite being able to do it.
+              </p>
+            </li>
+            <li>
+              <p>
+                The loser left a threat without blocking because there were
+                multiple threats on the board and they couldn't block all in one
+                turn.
+              </p>
+            </li>
+          </ul>
+          <p>
+            The first alternative goes against the second rule of the 3 extra
+            rules of play.
+          </p>
+          <p>
+            And we know that a player can't create more than 2 threats in one
+            turn.
+          </p>
+          <p>
+            As a result, the only victories that appear in the map are those
+            achieved through double threats.
+          </p>
+          <p>
+            In short: If there hadn't been a double threat before the
+            3-in-a-row, the player would have blocked the single threat, and
+            nobody would have won.
+          </p>
+          <h2 id="All-games-end-at-the-7th-turn">
+            All games end at the 7th turn (at most)
+          </h2>
+          <p>A classic game of tic tac toe has a maximum of 9 turns.</p>
+          <p>
+            If both players follow the 3 extra rules of play, you can always
+            know how the game will end at the 7th turn.
+          </p>
+          <p>Essentially, you can treat the 7th turn as the end of the game.</p>
+          <p>
+            Because of that, I didn’t include plays beyond the 7th turn in the
+            map of all possible plays.
+          </p>
+          <p>Let me explain how this works:</p>
+          <p>
+            First, we have to consider that a game of tic tac toe can only have
+            1 of 2 results: a win and a loss or a tie.
+          </p>
+          <p>
+            Also, because all victories are preceded by a double threat (as I
+            commented previously in the article), we can know if any player is
+            going to win 2 turns before the 3-in-a-row occurs.
+          </p>
+          <p>
+            By knowing if there will be a win or not, we also know if there will
+            be a tie or not.
+          </p>
+          <p>
+            Ultimately, you can always know the result of the game at least 2
+            turns before the end.
+          </p>
+          <p>
+            You only need to check if there is a double threat present in the
+            board after the 7th play is done. If the 7th play is done and there
+            is no double threat, nobody will win in that game.
+          </p>
+          <p>
+            In the map of all possible combinations of plays, if a game was
+            going to end in a tie I just included the plays until the 6th turn.
+          </p>
+          <p>
+            I did this because you can already tell if it is possible to make a
+            double threat in the 7th turn or not with 6 marks on the board.
+          </p>
+          <p>The less plays I inlcude, the better.</p>
+          <h2 id="The-only-3-states-of-ties">The only 3 states of ties</h2>
+          <p>
+            Did you know? All ties are rotated or mirrored versions of the
+            following boards:
+          </p>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/3-states-of-tie.webp"
+              width="700"
+              height="400"
+              alt="Three tic-tac-toe board examples showing tie games (1 = X, 2 = O): [1,2,2,2,1,1,1,1,2], [1,1,2,2,2,1,1,1,2], [1,1,2,2,2,1,1,2,1]"
+              style="padding: 0px calc(10vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>
+            These are the only ways in which you can fill the board without
+            creating a 3-in-a-row.
+          </p>
+          <p>
+            Any variations on the distribution of the marks will result in a 3
+            in a row being created or in a rotated or mirrored version of one of
+            the boards above.
+          </p>
+          <h2 id="Winning-sequences">Winning sequences</h2>
+          <p>
+            Making winning sequences is the second way of forcing a future win
+            mentioned in the 3rd rule of the 3 extra rules of play.
+          </p>
+          <p>
+            These are sequences of plays that, unavoidably, lead to a double
+            threat.
+          </p>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/winning-sequences-explanation.webp"
+              width="700"
+              height="400"
+              alt="Examples of winning sequences with X's and O's"
+              style="padding: 0px calc(12vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>
+            A winning sequence consists on a combination of threat + double
+            threat.
+          </p>
+          <p>
+            With this, the players force their opponents into blocking a threat
+            that enables them to make a double threat, achieving a victory.
+          </p>
+          <p>
+            It is basically a chain of forced moves for your opponent that ends
+            in your victory.
+          </p>
+          <p>
+            In the map of all possible plays, you will see that players can only
+            start winning sequences in the 3rd and 5th turn, with X’s, or the
+            4th turn, with O’s.
+          </p>
+          <h2>The trap ramification</h2>
+          <p>
+            In the map, there is one ramification that is different from all the
+            others.
+          </p>
+          <p>
+            Usually, if you make a play and your opponent can’t force a win in
+            the next turn, you at least have the chance to tie.
+          </p>
+          <p>
+            However, if you are playing with O's and enter this ramification,
+            even if your opponent doesn't force a win right away, all the
+            outcomes are losses for you.
+          </p>
+          <p>This is the ramification:</p>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/trap-ramification.webp"
+              width="700"
+              height="400"
+              alt="Ramification of plays with all its outcomes being wins for the player with X's"
+              style="padding: 0px calc(8vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>
+            This is the only ramification without any ties in it’s outcomes.
+          </p>
+          <p>
+            If you are playing with O's, never play into that ramification, or
+            you will definitely lose.
+          </p>
+          <h2>Using forced plays to reduce the amount of boards in the map</h2>
+          <p>
+            When making the map of all possible plays, there were cases in
+            which, instead of just adding 1 play per board, I could add 2,
+            reducing the amount of boards needed to show all possible plays.
+          </p>
+          <p>
+            In these cases, the players are forced to do an specific play by The
+            3 extra rules of play. Examples are:
+          </p>
+          <ul>
+            <li>
+              <p>
+                When the opponent makes a threat - The player is forced to block
+                that threat.
+              </p>
+            </li>
+            <li>
+              <p>
+                When it is possible to make a double threat - If there is no
+                threat to block, the player is forced to make the double threat.
+              </p>
+            </li>
+            <li>
+              <p>
+                When it is possible to make a winning sequence - If there is no
+                threat to block and can’t make a double threat, the player has
+                to make the winning sequence.
+              </p>
+            </li>
+          </ul>
+          <div class="imgDiv">
+            <img
+              loading="lazy"
+              src="assets(2)/Article-1/2-plays-per-board.webp"
+              width="700"
+              height="400"
+              alt="Same sequence of plays: with 1 play per board you need 5 boards, while with 2 plays per board you only need 3"
+              style="padding: 0px calc(14vw * var(--sizeAdjust))"
+            />
+          </div>
+          <p>
+            This allowed me to make the map more compact, using less boards when
+            the players are forced to do one play.
+          </p>
+          <h2>Some clarifications about the map</h2>
+          <ul id="clarificationsUl">
+            <li>
+              <p>
+                The wins are colored with green, for the player with X’s, and
+                yellow, for the player with O’s. They aren’t the wins themselves
+                (3-in-a-row), but the double threats that force the wins
+                (explained in How to win in advance with double threats)
+              </p>
+              <div class="imgDiv">
+                <img
+                  loading="lazy"
+                  src="assets(2)/Article-1/colors-for-wins.webp"
+                  width="700"
+                  height="400"
+                  alt="The double threats of the player with X's are colored with green and the ones of the player with O's are colored with yellow."
+                  style="padding: 0px calc(12vw * var(--sizeAdjust))"
+                />
+              </div>
+            </li>
+            <li>
+              <p>
+                When a play and it’s rotated / mirrored version (explained in
+                Symmetry of the board: rotations and reflections) are “childs”
+                of the same “parent” in the tree of possibilites, the rotated /
+                mirrored version isn’t included in the map.
+              </p>
+              <div class="imgDiv">
+                <img
+                  loading="lazy"
+                  src="assets(2)/Article-1/same-child-same-parent.webp"
+                  width="700"
+                  height="400"
+                  alt="Example of 'childs' not being included"
+                  style="padding: 0px calc(0vw * var(--sizeAdjust))"
+                />
+              </div>
+            </li>
+            <li>
+              <p>
+                When a play and it’s rotated / mirrored version are “childs” of
+                different “parents” in the tree of possibilites, both are
+                included and signaled with a gray frame and a number to
+                recognize their relationship. Only one of the versions shows its
+                ramifications.
+              </p>
+              <div class="imgDiv">
+                <img
+                  loading="lazy"
+                  src="assets(2)/Article-1/same-child-different-parent.webp"
+                  width="700"
+                  height="400"
+                  alt="Example of plays with gray frames."
+                  style="padding: 0px calc(8vw * var(--sizeAdjust))"
+                />
+              </div>
+            </li>
+          </ul>
+          <h2>The end</h2>
+          <p>Congratulations for reaching the end of the article!</p>
+          <p>Enjoy the free gift:</p>
+          <div id="endGiftCard">
+            <div id="endGiftImgDiv">
+              <img
+                width="130"
+                height="130"
+                loading="lazy"
+                src="assets(2)/articleCard1(6).webp"
+                alt="Illustration of a tree of possibilities"
+              />
+            </div>
+            <div id="endGiftPDiv">
+              <p>Map in high definition and with extra data.</p>
+            </div>
+            <a
+              href="assets(2)/Article-1/Map with extra data.webp"
+              download="Map of all plays (with extra data)"
+            >
+              Download map
+            </a>
+            <div id="endGiftCover" onclick="endGiftFunction()">
+              <img
+                width="150"
+                height="150"
+                loading="lazy"
+                src="assets(2)/Article-1/gift-icon3.webp"
+                alt="Black gift icon"
+              />
+              <img
+                width="150"
+                height="150"
+                loading="lazy"
+                id="giftIcon2"
+                src="assets(2)/Article-1/gift-icon2.webp"
+                alt="Purple gift icon"
+              />
+            </div>
+          </div>
+          <script>
+            function endGiftFunction() {
+              let cover = document.querySelector("#endGiftCover");
+              cover.style.opacity = "0";
+              cover.style.userSelect = "none";
+              cover.style.pointerEvents = "none";
+            }
+          </script>
+          <p>
+            Even though tic tac toe may be considered a simple game, there is a
+            lot more to it than just placing circles and crosses in a 3 x 3
+            board until someone makes a 3-in-a-row.
+          </p>
+          <p>
+            At this point, you not only know about many patterns, concepts and
+            strategies of the game, but you also understand better the map with
+            all its possible combinations of plays.
+          </p>
+          <p>
+            You can see how many different combinations of plays there are in
+            the game and how to reach each one of them.
+          </p>
+          <p>Every win, loss and tie is there for you to analyze.</p>
+          <p>Keep exploring the logic behind tic tac toe!</p>
+          <p style="color: rgb(209, 207, 220)">
+            <i
+              >Did you already know the patterns and strategies mentioned in
+              this article? Have you found some other interesting information
+              that I didn’t include here?</i
+            >
+          </p>
+          <p style="color: rgb(209, 207, 220); margin-bottom: 100px">
+            <i>Let me know any thoughts you have by leaving a comment below!</i>
+          </p>
+
+          <!--
+          <div id="disqus_thread"></div>
+          <script>
+            
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+
+            var disqus_config = function () {
+              this.page.url =
+                "https://j-star-py.github.io/TTTBlog-try-/article-1.html"; // Replace PAGE_URL with your page's canonical URL variable
+              this.page.identifier = "Article-1"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+
+            (function () {
+              // DON'T EDIT BELOW THIS LINE
+              var d = document,
+                s = d.createElement("script");
+              s.src = "https://tictactoe-guides.disqus.com/embed.js";
+              s.setAttribute("data-timestamp", +new Date());
+              (d.head || d.body).appendChild(s);
+            })();
+            
+          </script>
+          <noscript
+            >Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript"
+              >comments powered by Disqus.</a
+            ></noscript>
+          -->
+        </article>
+
+        <div class="sideColumn">
+          <section class="contentsTable">
+            <h2>TABLE OF CONTENTS</h2>
+            <ol>
+              <li>
+                <a href="#Symmetry-of-the-board"
+                  >Symmetry of the board: Rotations and reflections</a
+                >
+              </li>
+              <li>
+                <a href="#3-extra-rules-of-play">3 extra rules of play </a>
+              </li>
+              <li>
+                <a href="#Double-threats"
+                  >How to win in advance with double threats</a
+                >
+              </li>
+              <li>
+                <a href="#All-games-end-at-the-7th-turn"
+                  >All games end at the 7th turn</a
+                >
+              </li>
+              <li>
+                <a href="#The-only-3-states-of-ties"
+                  >The only 3 states of ties</a
+                >
+              </li>
+              <li><a href="#Winning-sequences">Winning sequences</a></li>
+            </ol>
+          </section>
+        </div>
+      </section>
+
+      <div style="background-color: rgb(35, 31, 46)"></div>
+      <section class="commentSection">
+        <div class="observedPoint"></div>
+        <!--CommentBox.io code-->
+        <div class="commentbox"></div>
+      </section>
+    </main>
+    <script src="scripts/footer.js"></script>
+    <script src="scripts/loadComments.js" defer></script>
+  </body>
+</html>
