@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blog - Tictactoe Guides</title>
+
+    <!--META FOR CHARSET-->
+    <meta charset="UTF-8" />
+    <!--META FOR VIEWPORT-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--ICON-->
+    <link rel="icon" type="image/x-icon" href="assets(2)/Logo-9.webp" />
+    <!--FONTS-->
+    <link rel="preload stylesheet" as="style" href="fonts/fonts.css" />
+    <!--SCRIPTS-->
+    <!--STYLES-->
+    <link
+      rel="preload"
+      href="styles/footerStyle.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="styles/footerStyle.css" /></noscript>
+    <link rel="preload stylesheet" as="style" href="styles/navPrimary.css" />
+    <link rel="stylesheet" href="styles/blogArticles.css" />
+  </head>
+  <body style="margin: 0px">
+    <script src="scripts/header.js"></script>
+    <main>
+      <section id="blogArticlesSection">
+        <header><h1>BLOG ARTICLES</h1></header>
+        <div id="articlesGrid">
+          <article class="articleCard">
+            <a href="article-1.html">
+              <div
+                class="cardImgDiv"
+                style="
+                  background: linear-gradient(
+                    to bottom left,
+                    rgb(100, 98, 206),
+                    rgb(100, 141, 195)
+                  );
+                "
+              >
+                <img
+                  src="assets(2)/articleCard1(6).webp"
+                  alt="Illustration of a tree of possibilities"
+                />
+              </div>
+              <div class="cardTextDiv">
+                <h2>
+                  All possible combinations of plays in
+                  <span style="text-wrap: nowrap">Tic Tac Toe</span>
+                </h2>
+                <p>
+                  View the map of every possible combination of plays, learn how
+                  it was created and uncover interesting game patterns.
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <div class="comingSoon"><p>Coming soon</p></div>
+          <div class="comingSoon"><p>Coming soon</p></div>
+          <div class="comingSoon"><p>Coming soon</p></div>
+        </div>
+      </section>
+    </main>
+    <script src="scripts/footer.js"></script>
+  </body>
+</html>
