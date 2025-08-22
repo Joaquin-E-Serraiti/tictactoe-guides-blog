@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="668.13538"
+   height="125.72826"
+   viewBox="0 0 176.77748 33.265603"
+   version="1.1"
+   id="svg5"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient1033">
+      <stop
+         style="stop-color:#ebebed;stop-opacity:1;"
+         offset="0.1487069"
+         id="stop1029" />
+      <stop
+         style="stop-color:#b8b8c2;stop-opacity:1;"
+         offset="0.7133621"
+         id="stop1031" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1852">
+      <stop
+         style="stop-color:#ea576a;stop-opacity:1;"
+         offset="0"
+         id="stop1848" />
+      <stop
+         style="stop-color:#782626;stop-opacity:1;"
+         offset="1"
+         id="stop1850" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1755">
+      <stop
+         style="stop-color:#99a0f8;stop-opacity:1;"
+         offset="0"
+         id="stop1751" />
+      <stop
+         style="stop-color:#513dc9;stop-opacity:1;"
+         offset="1"
+         id="stop1753" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient1852"
+       id="linearGradient333"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(7.6926862,3.5281034)"
+       x1="134.31116"
+       y1="4.4448304"
+       x2="191.12767"
+       y2="46.574085" />
+    <linearGradient
+       xlink:href="#linearGradient1755"
+       id="linearGradient335"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(7.6926862,3.5281029)"
+       x1="135.47069"
+       y1="9.4694204"
+       x2="186.48959"
+       y2="44.834805" />
+    <linearGradient
+       xlink:href="#linearGradient1033"
+       id="linearGradient1035"
+       x1="74.192299"
+       y1="155.80203"
+       x2="170.89146"
+       y2="155.80203"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.4076952,0,0,1.4076952,-42.649223,-99.77211)" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-21.136161,-102.91688)">
+    <g
+       id="g3401-8"
+       transform="matrix(0.80599022,0,0,0.80599022,-99.449174,96.116988)"
+       style="stroke-width:1.24071">
+      <path
+         id="rect234-9-9-79-7-7"
+         style="fill:url(#linearGradient333);fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:3.3;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         d="m 153.37698,8.4367114 -3.76557,3.7090286 10.29221,10.137685 -10.29221,10.13768 3.76596,3.7094 10.29221,-10.13767 10.29222,10.13767 3.76557,-3.7094 L 167.43516,22.283425 177.72737,12.14573 173.9618,8.4367014 163.66919,18.574395 Z" />
+      <path
+         id="path288-6-3-0-1-9"
+         style="fill:url(#linearGradient335);fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:3.3;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         d="m 177.38951,22.016241 a 14.057828,13.846752 0 0 0 -14.05779,13.846715 14.057828,13.846752 0 0 0 14.05779,13.8467 14.057828,13.846752 0 0 0 14.05817,-13.8467 14.057828,13.846752 0 0 0 -14.05817,-13.846715 z m 0,5.24523 a 8.7323172,8.6012029 0 0 1 8.73259,8.601485 8.7323172,8.6012029 0 0 1 -8.73259,8.60109 8.7323172,8.6012029 0 0 1 -8.73221,-8.6011 8.7323172,8.6012029 0 0 1 8.73221,-8.601475 z" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.0393px;font-family:Gadugi;-inkscape-font-specification:'Gadugi, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:url(#linearGradient1035);fill-opacity:1;stroke:#fefffe;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:3.3;paint-order:stroke markers fill"
+       x="61.517853"
+       y="126.11624"
+       id="text236-2"><tspan
+         id="tspan234-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.0393px;font-family:Gadugi;-inkscape-font-specification:'Gadugi, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:url(#linearGradient1035);fill-opacity:1;stroke-width:0"
+         x="61.517853"
+         y="126.11624"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.0393px;font-family:Gadugi;-inkscape-font-specification:'Gadugi, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:url(#linearGradient1035);fill-opacity:1;stroke-width:0"
+   id="tspan3958-3"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.0393px;font-family:Gadugi;-inkscape-font-specification:'Gadugi, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:url(#linearGradient1035);fill-opacity:1;stroke-width:0"
+   id="tspan3962-4">Tictactoe</tspan> </tspan>Guides</tspan></text>
+  </g>
+</svg>
