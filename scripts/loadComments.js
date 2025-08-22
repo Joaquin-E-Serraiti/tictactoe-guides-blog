@@ -14,7 +14,7 @@ function callback(entries, observer) {
         });
       }, 1600);
 
-      console.log('Element is in view!');
+      // console.log('Element is in view!');
 
       // Stop observing the element
       observer.unobserve(entry.target);
@@ -32,4 +32,5 @@ let options = {
 let observer = new IntersectionObserver(callback, options);
 
 let target = document.querySelector(".observedPoint");
+
 observer.observe(target);
